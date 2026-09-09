@@ -1,0 +1,22 @@
+{
+    "width": 37,
+    "height": 72,
+    "anchorX": 19,
+    "anchorY": 60,
+    "states": [
+        "idle"
+    ],
+    "animations": {
+        "idle": {
+            "length": 1
+        }
+    },
+    "collision": {
+        "type": "ellipse",
+        "rx": 18,
+        "ry": 10,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0
+    }
+}

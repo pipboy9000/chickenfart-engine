@@ -1,0 +1,21 @@
+{
+    "width": 32,
+    "height": 46,
+    "anchorX": 16,
+    "anchorY": 36,
+    "states": [
+        "idle"
+    ],
+    "animations": {
+        "idle": {
+            "length": 1
+        }
+    },
+    "collision": {
+        "type": "AABB",
+        "x": -16,
+        "y": -24,
+        "width": 32,
+        "height": 26
+    }
+}

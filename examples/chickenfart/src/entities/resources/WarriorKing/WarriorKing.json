@@ -1,0 +1,57 @@
+{
+    "width": 91,
+    "height": 57,
+    "anchorX": 36,
+    "anchorY": 50,
+    "states": [
+        "idle",
+        "walk",
+        "attack1",
+        "taunt",
+        "attack2",
+        "death"
+    ],
+    "animations": {
+        "idle": {
+            "length": 16
+        },
+        "walk": {
+            "length": 8
+        },
+        "attack1": {
+            "length": 30,
+            "events": {
+                "6": "attack1-1",
+                "15": "attack1-1",
+                "24": "attack1-1"
+            }
+        },
+        "taunt": {
+            "length": 18,
+            "events": {
+                "15": "taunt"
+            }
+        },
+        "attack2": {
+            "length": 30,
+            "events": {
+                "10": "attack2",
+                "12": "attack2",
+                "14": "attack2"
+            }
+        },
+        "death": {
+            "length": 40,
+            "events": {
+                "39": "death"
+            }
+        }
+    },
+    "collision": {
+        "type": "ellipse",
+        "radiusX": 8,
+        "radiusY": 12,
+        "offsetX": 0,
+        "offsetY": -10
+    }
+}

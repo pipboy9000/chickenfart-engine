@@ -1,0 +1,46 @@
+{
+    "width": 128,
+    "height": 128,
+    "anchorX": 64,
+    "anchorY": 75,
+    "states": [
+        "idle",
+        "idleLeft",
+        "idleRight",
+        "idleUp",
+        "jumpDown",
+        "jumpLeft",
+        "jumpRight",
+        "jumpUp"
+    ],
+    "animations": {
+        "idle": {
+            "length": 4
+        },
+        "idleLeft": {
+            "length": 4
+        },
+        "idleRight": {
+            "length": 4
+        },
+        "idleUp": {
+            "length": 4
+        },
+        "jumpDown": {
+            "length": 6
+        },
+        "jumpLeft": {
+            "length": 6
+        },
+        "jumpRight": {
+            "length": 6
+        },
+        "jumpUp": {
+            "length": 6
+        }
+    },
+    "collision": {
+        "type": "circle",
+        "rad": 5
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "width": 16,
+    "height": 16,
+    "anchorX": 8,
+    "anchorY": 13,
+    "states": [
+        "idle",
+        "pickup"
+    ],
+    "animations": {
+        "idle": {
+            "length": 6
+        },
+        "pickup": {
+            "length": 5,
+            "events": {
+                "4": "end"
+            }
+        }
+    }
+}

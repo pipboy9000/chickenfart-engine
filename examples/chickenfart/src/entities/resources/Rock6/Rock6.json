@@ -1,0 +1,14 @@
+{
+    "width": 27,
+    "height": 22,
+    "anchorX": 13,
+    "anchorY": 11,
+    "states": [
+        "idle"
+    ],
+    "animations": {
+        "idle": {
+            "length": 1
+        }
+    }
+}

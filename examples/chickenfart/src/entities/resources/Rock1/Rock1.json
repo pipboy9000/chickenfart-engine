@@ -1,0 +1,18 @@
+{
+    "width": 57,
+    "height": 44,
+    "anchorX": 29,
+    "anchorY": 22,
+    "states": [
+        "idle"
+    ],
+    "animations": {
+        "idle": {
+            "length": 1
+        }
+    },
+    "collision": {
+        "type": "circle",
+        "rad": 15
+    }
+}

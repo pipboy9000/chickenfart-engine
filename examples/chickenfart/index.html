@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Chickenfart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    function setFilter(filter) {
+        document.getElementById("canvas").className = 'filter-' + filter;
+    }
+</script>
+
+<body>
+
+    <script src="src/main.js" type="module"></script>
+
+    <div id="all">
+
+        <canvas id="canvas" class="filter-default"></canvas>
+
+        <div id="mainMenu">
+            <button id="newGame">
+                <span>New Game</span>
+            </button>
+            <!-- <button disabled>Continue</button> -->
+        </div>
+
+        <!-- <div class="buttons">
+            <div class="button" onclick="setFilter('morning')">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+            </div>
+            <div class="button" onclick="setFilter('default')">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+            </div>
+            <div class="button" onclick="setFilter('night')">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>

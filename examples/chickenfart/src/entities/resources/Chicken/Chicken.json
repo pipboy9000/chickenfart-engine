@@ -1,0 +1,28 @@
+{
+    "width": 16,
+    "height": 16,
+    "anchorX": 8,
+    "anchorY": 12,
+    "states": [
+        "idle",
+        "walk",
+        "fart"
+    ],
+    "animations": {
+        "idle": {
+            "length": 6
+        },
+        "walk": {
+            "length": 6
+        },
+        "fart": {
+            "length": 1
+        }
+    },
+    "collision": {
+        "type": "circle",
+        "x":0,
+        "y": 0,
+        "rad": 6
+    }
+}

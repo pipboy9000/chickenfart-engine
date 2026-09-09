@@ -1,0 +1,23 @@
+{
+    "width": 61,
+    "height": 121,
+    "anchorX": 32,
+    "anchorY": 50,
+    "states": [
+        "idle"
+    ],
+    "animations": {
+        "idle": {
+            "length": 1
+        }
+    },
+    "collision": {
+        "type": "rhombus",
+        "width": 40,
+        "height": 40,
+        "offsetX": 0,
+        "offsetY": 0,
+        "scaleY": 0.55,
+        "rotation": 0.75
+    }
+}

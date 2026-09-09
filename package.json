@@ -1,0 +1,33 @@
+{
+  "name": "@chickenfart/engine",
+  "version": "0.1.0",
+  "description": "Canvas-based 2D game engine",
+  "type": "module",
+  "license": "MIT",
+  "author": "pipboy9000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipboy9000/chickenfart-engine.git"
+  },
+  "homepage": "https://github.com/pipboy9000/chickenfart-engine",
+  "bugs": {
+    "url": "https://github.com/pipboy9000/chickenfart-engine/issues"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./world": "./src/world.js",
+    "./canvas": "./src/canvas.js",
+    "./collision": "./src/collision.js",
+    "./input": "./src/input.js",
+    "./floorTiles": "./src/floorTiles.js",
+    "./entitiesFactory": "./src/entitiesFactory.js",
+    "./sound": "./src/Sound.js"
+  },
+  "files": [
+    "src",
+    "examples"
+  ],
+  "scripts": {
+    "pack:check": "npm pack --dry-run"
+  }
+}

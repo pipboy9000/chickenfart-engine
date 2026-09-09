@@ -1,0 +1,51 @@
+{
+    "width": 100,
+    "height": 100,
+    "anchorX": 52,
+    "anchorY": 51,
+    "states": [
+        "idle",
+        "walk",
+        "attack1",
+        "attack2",
+        "attack3",
+        "hit",
+        "death"
+    ],
+    "animations": {
+        "idle": {
+            "length": 6
+        },
+        "walk": {
+            "length": 8
+        },
+        "attack1": {
+            "length": 6,
+            "events": {
+                "3": "attack1"
+            }
+        },
+        "attack2": {
+            "length": 6,
+            "events": {
+                "3": "attack1"
+            }
+        },
+        "attack3": {
+            "length": 9,
+            "events": {
+                "8": "attack3"
+            }
+        },
+        "hit": {
+            "length": 4
+        },
+        "death": {
+            "length": 4
+        }
+    },
+    "collision": {
+        "type": "circle",
+        "rad": 10
+    }
+}

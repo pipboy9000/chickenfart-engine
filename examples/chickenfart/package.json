@@ -1,0 +1,15 @@
+{
+  "name": "@chickenfart/example-game",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@chickenfart/engine": "file:../.."
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

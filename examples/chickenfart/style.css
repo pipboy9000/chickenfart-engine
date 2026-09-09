@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquarda+Bastarda+9&family=Pixelify+Sans:wght@400..700&display=swap');
+
+html,
+body,
+.chickenfart {
+    margin: 0;
+    padding: 0;
+}
+
+.all {
+    filter: brightness(1);
+    transition: filter 1s ease-out;
+}
+
+#canvas {
+    /* margin-left: 100px; */
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    image-rendering: pixelated;
+    transition: filter 5s ease-out;
+}
+
+#mainMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-family: "Jacquarda Bastarda 9";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: radial-gradient(#3b8ac01f, #0b1f2d4f);
+}
+
+#mainMenu>button {
+    font-family: "Jacquarda Bastarda 9";
+    font-size: 30px;
+    background: #0000003b;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 58px;
+    border: none;
+    padding: 20px 40px;
+}
+
+#seedInput {
+    text-transform: uppercase;
+    font-family: "Pixelify Sans";
+    text-align: center;
+    width: 190px;
+    font-size: 40px;
+    letter-spacing: 8px;
+    font-weight: 100;
+    background: #00000033;
+    border: none;
+    color: #ffffffd6;
+    border: none;
+}
+
+#seedInput:focus {
+    border: none;
+    outline: none;
+}
+
+.filter-default {
+    filter: sepia(0.3) brightness(0.8) contrast(1.2) hue-rotate(0deg) saturate(1);
+}
+
+.filter-night {
+    filter: sepia(0.5) brightness(0.55) contrast(2) hue-rotate(90deg) saturate(1.3);
+}
+
+.filter-morning {
+    filter: sepia(0.5) brightness(1.1) contrast(0.9) hue-rotate(-50deg) saturate(1.4);
+}
+
+.buttons {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    background: white;
+    padding: 4px;
+    font-size: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 20px -10px black;
+    color: rgb(54, 54, 54);
+    /* display: none; */
+}
+
+.buttons>.button {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.buttons>.button:hover {
+    background: rgb(234, 234, 234);
+}
