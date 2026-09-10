@@ -1360,3 +1360,78 @@ export function getEntityRhombus(entity, includeZ = false) {
 export function getScaledRhombusCorners(cx, cy, width, height, rotation, scaleY = 0.5) {
     return getRhombusCorners(cx, cy, width, height, rotation, scaleY);
 }
+
+// --- Point hit-testing (used for click/tap detection) ---
+
+function isPointInAABB(px, py, aabb) {
+    return px >= aabb.left && px <= aabb.right && py >= aabb.top && py <= aabb.bottom;
+}
+
+function isPointInCircle(px, py, circle) {
+    const dx = px - circle.x;
+    const dy = py - circle.y;
+    return dx * dx + dy * dy <= circle.r * circle.r;
+}
+
+function isPointInEllipse(px, py, ellipse) {
+    const rot = ellipse.rotation || 0;
+    const cos = Math.cos(rot);
+    const sin = Math.sin(rot);
+    const dx = px - ellipse.cx;
+    const dy = py - ellipse.cy;
+    // rotate the point into the ellipse's local (unrotated) space
+    const localX = dx * cos + dy * sin;
+    const localY = -dx * sin + dy * cos;
+    return (localX * localX) / (ellipse.rx * ellipse.rx) + (localY * localY) / (ellipse.ry * ellipse.ry) <= 1;
+}
+
+function isPointInConvexPolygon(px, py, points) {
+    let sign = 0;
+    for (let i = 0; i < points.length; i++) {
+        const a = points[i];
+        const b = points[(i + 1) % points.length];
+        const cross = (b.x - a.x) * (py - a.y) - (b.y - a.y) * (px - a.x);
+        if (cross !== 0) {
+            const currSign = cross > 0 ? 1 : -1;
+            if (sign === 0) sign = currSign;
+            else if (sign !== currSign) return false;
+        }
+    }
+    return true;
+}
+
+/** Tests whether world point (px, py) lies inside a dynamic entity's collision shape. */
+export function isPointInEntityCollision(entity, px, py) {
+    if (!entity.collision) return false;
+
+    switch (entity.collision.type) {
+        case "AABB":
+            return isPointInAABB(px, py, entToAABB(entity));
+        case "circle":
+            return isPointInCircle(px, py, getEntityCircle(entity));
+        case "ellipse":
+            return isPointInEllipse(px, py, getEntityEllipse(entity));
+        case "rhombus": {
+            const rhombus = getEntityRhombus(entity);
+            return isPointInConvexPolygon(px, py, getRhombusCorners(rhombus.cx, rhombus.cy, rhombus.width, rhombus.height, rhombus.rotation, rhombus.scaleY));
+        }
+        default:
+            return false;
+    }
+}
+
+/** Tests whether world point (px, py) lies inside a static wall's collision shape (as produced by `world.addStaticEntity`). */
+export function isPointInWall(wall, px, py) {
+    switch (wall.type) {
+        case "AABB":
+            return isPointInAABB(px, py, wall);
+        case "circle":
+            return isPointInCircle(px, py, wall);
+        case "ellipse":
+            return isPointInEllipse(px, py, { cx: wall.cx, cy: wall.cy, rx: wall.rx, ry: wall.ry, rotation: wall.rotation });
+        case "rhombus":
+            return isPointInConvexPolygon(px, py, getRhombusCorners(wall.cx, wall.cy, wall.width, wall.height, wall.rotation, wall.scaleY));
+        default:
+            return false;
+    }
+}

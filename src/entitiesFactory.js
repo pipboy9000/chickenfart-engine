@@ -86,6 +86,7 @@ export class Entity {
         this.drawOverEverything = null; //draw above everything (for sprite related interfaces)
         this.onCollision = null;
         this.onAnimationEvent = null;
+        this.onClick = null; //called when a mouse click/tap lands inside this entity's collision shape
 
         //anim data
         this.currState = "idle";

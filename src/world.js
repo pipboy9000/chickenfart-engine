@@ -10,7 +10,9 @@ import {
     checkSegmentCollision as checkSegmentCollisionInternal,
     getEntityRhombus,
     getScaledRhombusCorners,
-    getAabbAabbMtv
+    getAabbAabbMtv,
+    isPointInEntityCollision,
+    isPointInWall
 } from "./collision.js";
 
 
@@ -129,8 +131,29 @@ function update(dt) {
     stepStaticCollisions(entities, walls);
     stepCollisions(entities);
 
+    if (input.mousePressed.left || input.mousePressed.right || input.mousePressed.middle) {
+        handleClick();
+    }
+
     if (input.keyPressed["KeyP"]) {
         drawDebug = !drawDebug;
+    }
+}
+
+/** Fires `onClick` on every entity/static entity whose collision shape contains the current mouse position. Called once per frame on mouse-down. */
+function handleClick() {
+    const { worldX, worldY } = input.mouse;
+
+    for (const entity of entities) {
+        if (entity.onClick && isPointInEntityCollision(entity, worldX, worldY)) {
+            entity.onClick(input.mouse);
+        }
+    }
+
+    for (const wall of walls) {
+        if (wall.entity.onClick && isPointInWall(wall, worldX, worldY)) {
+            wall.entity.onClick(input.mouse);
+        }
     }
 }
 
