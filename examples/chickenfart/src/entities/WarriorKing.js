@@ -1,6 +1,6 @@
 import { Entity } from "@chickenfart/engine/entitiesFactory";
 import { addEntity,checkCircleCollision, removeEntity, getEntityByTag } from "@chickenfart/engine/world";
-import { valueToRedToGreen } from "../utils.js";
+import { valueToRedToGreen } from "@chickenfart/engine/utils";
 import * as Orc from "./Orc.js";
 
 export async function create(x, y) {

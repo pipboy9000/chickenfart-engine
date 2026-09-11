@@ -1,9 +1,9 @@
 import { Entity } from "@chickenfart/engine/entitiesFactory";
 import { checkCircleCollision, addEntity, getEntityByTag, removeEntity } from "@chickenfart/engine/world";
-import { valueToRedToGreen, getEntitiesDistanceSqr } from "/src/utils.js";
+import { valueToRedToGreen, getEntitiesDistanceSqr } from "@chickenfart/engine/utils";
 import { Sound } from "@chickenfart/engine/sound";
 import * as Crystal from "./Crystal.js";
-import ParticleSystem from "./ParticleSystem.js"
+import ParticleSystem from "@chickenfart/engine/ParticleSystem";
 import WhiteSmoke from "./WhiteSmoke.js";
 
 

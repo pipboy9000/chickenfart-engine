@@ -1,5 +1,5 @@
 import { Entity } from "@chickenfart/engine/entitiesFactory";
-import ParticleSystem from "./ParticleSystem.js";
+import ParticleSystem from "@chickenfart/engine/ParticleSystem";
 import { addEntity, removeEntity } from "@chickenfart/engine/world";
 
 export async function create(x, y, lastFor) {

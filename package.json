@@ -21,7 +21,10 @@
     "./input": "./src/input.js",
     "./floorTiles": "./src/floorTiles.js",
     "./entitiesFactory": "./src/entitiesFactory.js",
-    "./sound": "./src/Sound.js"
+    "./sound": "./src/Sound.js",
+    "./utils": "./src/utils.js",
+    "./ParticleSystem": "./src/ParticleSystem.js",
+    "./particleSystem": "./src/ParticleSystem.js"
   },
   "files": [
     "src",

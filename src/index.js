@@ -6,3 +6,5 @@ export * as collision from "./collision.js"; // shape intersection and MTV resol
 export * as input from "./input.js"; // keyboard/mouse state
 export { Entity } from "./entitiesFactory.js"; // sprite-backed entity base class
 export { Sound } from "./Sound.js"; // spatial audio playback
+export * as utils from "./utils.js"; // math, random, color, and geometry utilities
+export { ParticleSystem } from "./ParticleSystem.js"; // particle system component

@@ -5,8 +5,8 @@ import * as Smoke from "./SmokePuff.js";
 import * as Shuriken from "./Shuriken.js";
 import { Entity } from "@chickenfart/engine/entitiesFactory";
 import { checkSegmentCollision } from "@chickenfart/engine/world";
-import { createPerpendicularLine } from "../utils.js";
-import ParticleSystem from "./ParticleSystem.js"
+import { createPerpendicularLine } from "@chickenfart/engine/utils";
+import ParticleSystem from "@chickenfart/engine/ParticleSystem";
 
 let sixthPi = Math.PI / 6;
 

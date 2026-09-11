@@ -81,6 +81,9 @@ When creating or editing gameplay content using this engine:
 - `src/canvas.js` — canvas and camera
 - `src/input.js` — keyboard and mouse state
 - `src/floorTiles.js` — floor tile setup and loading
+- `src/Sound.js` — spatial audio playback
+- `src/utils.js` — math, random, color, and geometry utilities
+- `src/ParticleSystem.js` — particle emitter and update/draw loop
 
 ## Content JSON schemas
 See [`docs/content-schemas.md`](docs/content-schemas.md) for the entity
