@@ -131,12 +131,38 @@ function update(dt) {
     stepStaticCollisions(entities, walls);
     stepCollisions(entities);
 
+    handleMouseHover();
+
     if (input.mousePressed.left || input.mousePressed.right || input.mousePressed.middle) {
         handleClick();
     }
 
     if (input.keyPressed["KeyP"]) {
         drawDebug = !drawDebug;
+    }
+}
+
+/** Fires hover callbacks when the mouse crosses an entity collision shape boundary. */
+function handleMouseHover() {
+    const { worldX, worldY } = input.mouse;
+
+    for (const entity of entities) {
+        updateMouseHover(entity, isPointInEntityCollision(entity, worldX, worldY));
+    }
+
+    for (const wall of walls) {
+        updateMouseHover(wall.entity, isPointInWall(wall, worldX, worldY));
+    }
+}
+
+function updateMouseHover(entity, isHovered) {
+    if (isHovered === entity.isMouseOver) return;
+
+    entity.isMouseOver = isHovered;
+    if (isHovered) {
+        if (entity.onMouseEnter) entity.onMouseEnter(input.mouse);
+    } else if (entity.onMouseLeave) {
+        entity.onMouseLeave(input.mouse);
     }
 }
 

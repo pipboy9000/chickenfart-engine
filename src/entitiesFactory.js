@@ -57,7 +57,8 @@ async function getResource(resName) {
 /**
  * A sprite-backed game object. Create instances with `Entity.create(x, y, assetName)`
  * rather than the constructor directly. Extend behavior by assigning lifecycle hooks:
- * `onStart`, `onUpdate`, `onDraw`, `onDrawBehind`, `onCollision`, `onAnimationEvent`.
+ * `onStart`, `onUpdate`, `onDraw`, `onDrawBehind`, `onCollision`, `onAnimationEvent`,
+ * `onClick`, `onMouseEnter`, and `onMouseLeave`.
  */
 export class Entity {
     constructor(x, y, resource) {
@@ -87,6 +88,9 @@ export class Entity {
         this.onCollision = null;
         this.onAnimationEvent = null;
         this.onClick = null; //called when a mouse click/tap lands inside this entity's collision shape
+        this.onMouseEnter = null;
+        this.onMouseLeave = null;
+        this.isMouseOver = false;
 
         //anim data
         this.currState = "idle";
