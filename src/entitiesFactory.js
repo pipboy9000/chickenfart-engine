@@ -93,7 +93,7 @@ export class Entity {
         this.isMouseOver = false;
 
         //anim data
-        this.currState = "idle";
+        this.currState = resource.states[0];
         this.animFrameDelay = 100; //ms per frame
         this.time = 0;
         this.flipX = false;
