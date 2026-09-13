@@ -427,14 +427,14 @@ export async function loadLevel(level, onProgress) {
             _ent.scale = ent.scale;
             _ent.rot = ent.rot;
             _ent.tag = ent.tag ? ent.tag : _ent.tag || "";
-            _ent.visible = ent.isVisible !== undefined ? ent.isVisible : true;
+            _ent.visible = ent.isInvisible !== undefined ? !ent.isInvisible : true;
             addEntity(_ent);
         } else {
             _ent = await Entity.create(ent.x, ent.y, ent.name);
             _ent.scale = ent.scale;
             _ent.rot = ent.rot;
             _ent.tag = ent.tag ? ent.tag : _ent.tag || "";
-            _ent.visible = ent.isVisible !== undefined ? ent.isVisible : true;
+            _ent.visible = ent.isInvisible !== undefined ? !ent.isInvisible : true;
 
             if (ent.isFloorItem) {
                 addFloorItem(_ent);
