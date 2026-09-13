@@ -79,6 +79,7 @@ export class Entity {
         this.anchorX = 0;
         this.anchorY = 0;
         this.opacity = 1;
+        this.visible = true;
 
         this.onStart = null; //called once the engine starts, can be used for delayed initialization that require all entities to be loaded
         this.onUpdate = null;
@@ -137,7 +138,9 @@ export class Entity {
 
     /** Draws the current animation frame, honoring flip, rotation, opacity, and flash effects. Called every frame by `world.js`. */
     draw = () => {
-        // if(!ctx) return;
+        
+        if (!this.visible) return;
+
         if (this.active) {
             ctx.save();
             if (this.onDrawBehind) {
