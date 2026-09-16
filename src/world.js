@@ -364,6 +364,10 @@ export function removeEntity(entity) {
         }
         entities.splice(index, 1);
     }
+
+    if (entity.onRemove) {
+        entity.onRemove();
+    }
 }
 
 /** Returns collisions between a circle (x, y, r) and all walls/entities, excluding `excludedEntity`. */

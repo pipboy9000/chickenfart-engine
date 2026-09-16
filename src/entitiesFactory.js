@@ -83,6 +83,7 @@ export class Entity {
 
         this.onStart = null; //called once the engine starts, can be used for delayed initialization that require all entities to be loaded
         this.onUpdate = null;
+        this.onRemove = null;
         this.onDraw = null; //draw above the sprinte
         this.onDrawBehind = null; //draw behind the sprite
         this.drawOverEverything = null; //draw above everything (for sprite related interfaces)
