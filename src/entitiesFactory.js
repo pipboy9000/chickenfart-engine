@@ -193,6 +193,10 @@ export class Entity {
                     case "yellow":
                         ctx.filter = `grayscale(${f * 3}) sepia(${f * 3}) saturate(${f * 3}) hue-rotate(23deg) brightness(${1 + f * 2})`;
                         break;
+                    
+                    case "purple":
+                        ctx.filter = `grayscale(${f * 3}) sepia(${f * 3}) saturate(${f * 3}) hue-rotate(280deg) brightness(${1 + f * 2})`;
+                        break;
                 }
             }
 
